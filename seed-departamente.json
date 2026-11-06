@@ -1,0 +1,82 @@
+{
+  "advocacy-juridic": {
+    "desc": "Apără interesele tinerilor și asigură conformitatea juridică a organizației.",
+    "goals": "Poziții publice argumentate pe teme de tineret\nOrganizație conformă cu legea și cu GDPR\nModele de documente verificate juridic",
+    "head": "Daria-Maria Hera",
+    "kpi": "Documente avizate juridic\nCampanii de advocacy derulate\nIncidente GDPR (țintă: zero)",
+    "members": "",
+    "name": "Advocacy și Comunicare Juridică",
+    "resp": "Redactează poziții și campanii de advocacy\nVerifică legal contractele și documentele\nSupraveghează respectarea GDPR\nAsigură procedurile pentru voluntarii minori\nOferă consultanță juridică filialelor",
+    "rules": "Contractele noi trec prin avizul departamentului\nPrelucrarea datelor personale se face doar cu consimțământ\nAcordul părinților este obligatoriu pentru minori"
+  },
+  "finante": {
+    "desc": "Gestionează bugetul și resursele financiare ale organizației, cu transparență.",
+    "goals": "Buget anual aprobat și respectat\nRaportare financiară trimestrială\nEvidență clară a cotizațiilor și donațiilor",
+    "head": "Alexandru Popescu",
+    "kpi": "Abateri de la buget (%)\nRapoarte financiare predate la termen\nProiecte cu decont închis la timp",
+    "members": "",
+    "name": "Finanțe",
+    "resp": "Elaborează bugetul și rectificările\nEvidența veniturilor și cheltuielilor\nAvizează cheltuielile proiectelor\nPregătește rapoartele pentru Comisia de Cenzori\nGestionează cotizațiile și sponsorizările primite",
+    "rules": "Orice cheltuială se aprobă înainte de plată\nFiecare plată are document justificativ\nRaportul financiar se prezintă trimestrial Consiliului Director"
+  },
+  "organizare-interna": {
+    "desc": "Coordonează funcționarea filialelor și structurile locale.",
+    "goals": "Filiale active în toate județele țintă\nProceduri unitare pentru toate filialele\nComunicare constantă cu președinții de filială",
+    "head": "Vacant",
+    "kpi": "Filiale cu raport lunar predat\nFiliale înființate în an\nŞedinţe de filială ţinute",
+    "members": "",
+    "name": "Organizare Internă",
+    "resp": "Sprijină înființarea de filiale noi\nMonitorizează activitatea filialelor\nAplică regulamentele interne\nOrganizează ședințele cu președinții de filială\nMediază situațiile dintre structuri",
+    "rules": "Filiala nouă se înființează prin hotărâre\nFiecare filială raportează lunar\nSchimbările de conducere locală se comunică în 5 zile"
+  },
+  "parteneriate-sponsorizari": {
+    "desc": "Construiește relații cu companii și instituții care susțin activitatea DNT.",
+    "goals": "Sponsori pentru proiectele principale\nContracte de parteneriat clare\nRelații pe termen lung cu partenerii",
+    "head": "Vacant",
+    "kpi": "Parteneriate active\nFonduri atrase\nParteneri reînnoiți",
+    "members": "",
+    "name": "Parteneriate și Sponsorizări",
+    "resp": "Identifică și contactează potențiali parteneri\nNegociază și pregătește contractele\nGestionează relația cu sponsorii\nRaportează partenerilor rezultatele\nColaborează cu Finanțe pentru fondurile obținute",
+    "rules": "Contractele se semnează doar după aprobarea Biroului Executiv\nFiecare parteneriat se înregistrează în registru\nSponsorii primesc raport după fiecare proiect"
+  },
+  "proiecte": {
+    "desc": "Transformă ideile tinerilor în proiecte și activități concrete.",
+    "goals": "Proiecte finalizate în buget și la termen\nProiecte în fiecare filială activă\nRezultate măsurabile pentru fiecare proiect",
+    "head": "Alexia Bușe",
+    "kpi": "Proiecte în desfășurare\nProiecte finalizate la termen (%)\nNumăr de participanți la activități",
+    "members": "",
+    "name": "Proiecte",
+    "resp": "Primește și evaluează propunerile de proiecte\nSusține echipele în planificare\nMonitorizează stadiul proiectelor\nColectează rapoartele finale\nPromovează bunele practici între filiale",
+    "rules": "Fiecare proiect are coordonator, buget estimat și termene\nProiectul începe doar după aprobare\nRaportul final se predă în 14 zile de la încheiere"
+  },
+  "relatii-externe": {
+    "desc": "Reprezintă DNT în fața altor organizații de tineret, instituții și rețele internaționale.",
+    "goals": "Parteneriate cu organizații similare\nParticiparea DNT la evenimente naționale și internaționale\nVizibilitate publică constantă",
+    "head": "Vacant",
+    "kpi": "Evenimente externe la care DNT a participat\nColaborări noi\nApariții publice",
+    "members": "",
+    "name": "Relații Externe",
+    "resp": "Menține relația cu organizațiile partenere\nPregătește delegațiile DNT la evenimente\nCoordonează comunicarea externă\nGestionează invitațiile primite\nTrimite rapoarte după fiecare eveniment extern",
+    "rules": "Reprezentarea oficială se face doar cu mandat\nPozițiile publice se aprobă în prealabil de Biroul Executiv\nFiecare eveniment extern are raport scris"
+  },
+  "resurse-umane": {
+    "desc": "Gestionează ciclul voluntarilor: primire, repartizare, dezvoltare și retragere.",
+    "goals": "Proces de înscriere rapid și clar\nVoluntari repartizați în 7 zile de la acceptare\nEvaluări periodice pentru toți voluntarii activi",
+    "head": "Vacant",
+    "kpi": "Voluntari noi pe lună\nTimp mediu de soluționare a cererilor\nRata voluntarilor activi (%)",
+    "members": "",
+    "name": "Resurse Umane",
+    "resp": "Verifică și aprobă cererile de înscriere\nRepartizează voluntarii în filiale și departamente\nEvidența ordelor, promovărilor, suspendărilor și retragerilor\nEvaluează periodic implicarea\nEmite adeverințe, diplome și certificate de voluntariat",
+    "rules": "Fiecare voluntar are fișă completă și număr de înregistrare\nCererile se soluționează în maximum 14 zile\nSchimbările de status se înregistrează cu dată și motiv\nVoluntarii minori au acord parental înainte de activitate"
+  },
+  "secretariat": {
+    "desc": "Asigură evidența oficială a organizației și circulația documentelor.",
+    "goals": "Registre complete și la zi\nProcese-verbale redactate în maximum 5 zile\nArhivă ordonată, fără documente pierdute",
+    "head": "Vacant",
+    "kpi": "Documente înregistrate la timp (%)\nProcese-verbale predate la termen\nFiliale cu registrul actualizat",
+    "members": "",
+    "name": "Secretariat",
+    "resp": "Ține registrul de intrare/ieșire\nRedactează convocatoarele și procesele-verbale\nPăstrează statutul, regulamentele și hotărârile\nNumerotează și arhivează documentele\nSusține secretarii de filială",
+    "rules": "Fiecare document primește număr de înregistrare înainte de a circula\nProcesele-verbale se semnează în maximum 5 zile de la ședință\nDocumentele confidențiale se arhivează cu acces restricționat"
+  }
+}
