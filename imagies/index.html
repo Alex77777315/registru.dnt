@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DNT CENTRAL – Evidență internă</title>
+<style>
+:root{--navy:#1B3A66;--deep:#0B1A33;--ink:#070F1F;--blue:#2F6BFF;--cyan:#27D7E0;--coral:#FF5A4E;--sun:#FFC93C;--ok:#3DDC97;--w:#F6F8FF;--m:#9DB0D3;--line:rgba(157,176,211,.2);
+box-sizing:border-box;color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%}
+body{margin:0;background:var(--ink);color:var(--w);font:15px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.app{display:grid;grid-template-columns:240px 1fr;height:100%}
+aside{background:var(--deep);border-right:1px solid var(--line);padding:18px 14px;display:flex;flex-direction:column;gap:4px;overflow:auto}
+aside h1{font:800 20px/1 system-ui;margin:4px 8px 4px;letter-spacing:-.02em}
+aside small{margin:0 8px 18px;color:var(--m);font-size:12px}
+aside a{padding:11px 14px;border-radius:12px;font-weight:600;color:var(--m);transition:background .15s}
+aside a:hover{background:rgba(255,255,255,.06);color:#fff}
+aside a.on{background:var(--blue);color:#fff}
+main{overflow:auto;padding:28px 4vw 60px}
+h2{font:800 28px/1.1 system-ui;margin:0 0 4px;letter-spacing:-.02em}
+.sub{color:var(--m);margin:0 0 22px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.btn{border:0;cursor:pointer;background:var(--coral);color:#fff;font-weight:700;padding:10px 18px;border-radius:999px}
+.btn.g{background:transparent;border:1.5px solid var(--line)}.btn.g:hover{border-color:var(--cyan);color:var(--cyan)}
+.btn.s{padding:6px 12px;font-size:13px}.btn.d{background:transparent;border:1.5px solid var(--coral);color:var(--coral)}
+input,select,textarea{background:var(--deep);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;width:100%}
+.bar input,.bar select{width:auto;min-width:160px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.kpi{padding:20px;border-radius:20px;background:var(--navy)}.kpi:nth-child(2){background:var(--blue)}.kpi:nth-child(3){background:#c4413a}.kpi:nth-child(4){background:#7a5d0e}.kpi:nth-child(5){background:#1c6a52}
+.kpi b{display:block;font:800 40px/1 system-ui}.kpi span{font-size:13px;opacity:.9}
+.panel{background:rgba(27,58,102,.35);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:16px}
+.panel h3{margin:0 0 12px;font-size:16px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--m);font-weight:700;cursor:default}
+tr.cl{cursor:pointer}tr.cl:hover td{background:rgba(255,255,255,.04)}
+.wrap{overflow-x:auto}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:700;background:var(--navy)}
+.t-activ{background:#1c6a52}.t-candidat{background:#7a5d0e}.t-inactiv{background:#444d60}.t-suspendat{background:#c4413a}.t-retras,.t-arhivat{background:#333}
+.row{display:grid;grid-template-columns:130px 1fr 40px;gap:10px;align-items:center;margin:6px 0;font-size:14px}
+.row i{display:block;height:10px;border-radius:6px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.det{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px 24px}
+.det div span{display:block;font-size:12px;color:var(--m)}
+.pre{white-space:pre-wrap}
+dialog{border:1px solid var(--line);border-radius:22px;background:var(--deep);color:var(--w);width:min(720px,94vw);padding:24px;max-height:90vh}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.fg label{display:grid;gap:4px;font-weight:600;font-size:13px;color:var(--m)}
+.fg label.f{grid-column:1/-1}.fg label.c{display:flex;gap:8px;align-items:center}.fg label.c input{width:auto}
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ok);color:#06210f;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s;z-index:9}
+#toast.e{background:var(--coral);color:#fff}#toast.v{opacity:1}
+.gate{max-width:520px;margin:18vh auto;text-align:center;padding:0 20px}
+@media(max-width:800px){.app{grid-template-columns:1fr;grid-template-rows:auto 1fr}aside{flex-direction:row;overflow-x:auto;padding:10px;border-right:0;border-bottom:1px solid var(--line)}aside h1,aside small{display:none}aside a{white-space:nowrap}.row{grid-template-columns:90px 1fr 30px}}
+</style>
+</head>
+<body>
+<div id="root"><div class="gate"><h2>Se încarcă…</h2></div></div>
+<dialog id="dlg"></dialog>
+<div id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const STAT=['candidat','activ','inactiv','suspendat','retras','arhivat'];
+const FUNC=['Voluntar','Coordonator local','Secretar filială','Președinte filială','Membru Birou Executiv','Director departament'];
+const COLS=['volunteers','branches','departments','register','audit'];
+let db,user,me={id:'?',name:'Board'},D={},ready=0;COLS.forEach(c=>D[c]=[]);
+const today=()=>new Date().toISOString().slice(0,10);
+const yr=()=>new Date().getFullYear();
+const byId=(c,id)=>D[c].find(x=>x.id===id);
+const bn=id=>byId('branches',id)?.name||'Național';
+const dn=id=>byId('departments',id)?.name||'—';
+function toast(t,e){const x=$('#toast');x.textContent=t;x.className='v'+(e?' e':'');clearTimeout(x._t);x._t=setTimeout(()=>x.className='',2600)}
+async function save(col,id,obj,act){try{await db.collection(col).doc(id).set(obj);
+ if(col!=='audit'){const a='A'+Date.now().toString(36);await db.collection('audit').doc(a).set({ts:new Date().toISOString(),by:me.name,act,ref:id})}
+ toast('Salvat.');return true}catch(e){toast('Eroare la salvare: '+(e.message||e.code),1);return false}}
+async function del(col,id,act){if(!confirm('Ștergi definitiv această înregistrare?'))return;
+ try{await db.collection(col).doc(id).delete();await save('audit','A'+Date.now().toString(36),{ts:new Date().toISOString(),by:me.name,act,ref:id});toast('Șters.')}catch(e){toast('Eroare: '+e.message,1)}}
+function nextNo(prefix,list,key){const re=new RegExp('^'+prefix+'(\\d+)$');let m=0;list.forEach(x=>{const r=re.exec(x[key]||'');if(r)m=Math.max(m,+r[1])});return prefix+String(m+1).padStart(4,'0')}
+// ---- FORMS
+const brOpt=()=>[['','Național']].concat(D.branches.map(b=>[b.id,b.name]));
+const dpOpt=()=>[['','—']].concat(D.departments.map(b=>[b.id,b.name]));
+const VF=()=>[['name','Nume și prenume','text',0,1],['email','E-mail','email'],['phone','Telefon','tel'],['county','Județ','text'],['city','Localitate','text'],['birth','Data nașterii','date'],['joined','Data înscrierii','date'],['accepted','Data acceptării','date'],
+['branch','Filiala','select',brOpt()],['dept','Departament','select',dpOpt()],['role','Funcția','select',FUNC.map(x=>[x,x])],['coord','Coordonator direct','text'],['status','Status','select',STAT.map(x=>[x,x])],
+['contractNo','Nr. contract de voluntariat','text'],['gdpr','Consimțământ GDPR semnat','check'],['minor','Voluntar minor','check'],['parental','Acord parental semnat (minori)','check'],['decl','Declarații și acorduri suplimentare','check'],['notes','Observații','textarea',0,0,1]];
+const RF=()=>[['dir','Direcție','select',[['IN','Intrare'],['OUT','Ieșire']]],['date','Data înregistrării','date'],['branch','Filiala','select',brOpt()],['type','Tip document','select',['Adresă','Cerere','Decizie','Hotărâre','Proces-verbal','Invitație','Contract','Parteneriat','Document financiar','Raport','Alt document'].map(x=>[x,x])],
+['docNo','Număr document','text'],['from','Emitent','text'],['to','Destinatar','text'],['dept','Departament responsabil','select',dpOpt()],['resp','Persoană responsabilă','text'],['status','Status','select',['înregistrat','în lucru','soluționat','arhivat'].map(x=>[x,x])],['subject','Subiect','text',0,1,1],['notes','Observații','textarea',0,0,1]];
+const BF=()=>[['name','Denumirea filialei','text',0,1],['code','Cod (ex. GJ)','text',0,1],['county','Județ','text'],['city','Localitate','text'],['founded','Data înființării','date'],['president','Președinte','text'],['vice','Vicepreședinți','text'],['secretary','Secretar','text'],['coords','Coordonatori de departamente','textarea',0,0,1],['notes','Observații','textarea',0,0,1]];
+const PF=()=>[['name','Denumire','text',0,1],['head','Director / coordonator','text'],['members','Membri','textarea',0,0,1],['desc','Descriere','textarea',0,0,1],['goals','Obiective','textarea',0,0,1],['resp','Responsabilități','textarea',0,0,1],['rules','Reguli de funcționare','textarea',0,0,1],['kpi','Indicatori de performanță','textarea',0,0,1]];
+function fld([k,l,t,o,req,full],v){v=v??'';const f=full?' f':'';
+ if(t==='check')return `<label class="c"><input type="checkbox" name="${k}" ${v?'checked':''}>${l}</label>`;
+ if(t==='select')return `<label class="${f}">${l}<select name="${k}">${o.map(([a,b])=>`<option value="${esc(a)}" ${a===v?'selected':''}>${esc(b)}</option>`).join('')}</select></label>`;
+ if(t==='textarea')return `<label class="f">${l}<textarea name="${k}" rows="3">${esc(v)}</textarea></label>`;
+ return `<label class="${f}">${l}<input name="${k}" type="${t}" value="${esc(v)}" ${req?'required':''}></label>`}
+function form(title,fields,vals,onSave){const d=$('#dlg');
+ d.innerHTML=`<h2 style="font-size:22px">${title}</h2><form method="dialog" id="ff"><div class="fg" style="margin:16px 0">${fields.map(f=>fld(f,vals[f[0]])).join('')}</div><div class="bar"><button class="btn" value="ok">Salvează</button><button class="btn g" type="button" id="cx">Anulează</button></div></form>`;
+ $('#cx').onclick=()=>d.close();
+ $('#ff').onsubmit=async e=>{e.preventDefault();const o={};fields.forEach(([k,,t])=>{const el=e.target.elements[k];o[k]=t==='check'?el.checked:el.value.trim()});if(await onSave(o))d.close()};
+ d.showModal()}
+// ---- ACTIONS
+function volForm(id){const v=id?byId('volunteers',id):{joined:today(),status:'candidat',role:'Voluntar'};
+ form(id?'Editează voluntar':'Voluntar nou',VF(),v,async o=>{
+  if(o.minor&&!o.parental){toast('Pentru minori este necesar acordul parental.',1);return false}
+  let rec,no=v.regNo;
+  if(!id){no=nextNo('V-'+yr()+'-',D.volunteers,'regNo');rec={...o,regNo:no,history:[{d:today(),s:o.status,n:'Înscriere'}],acts:[]};id=no}
+  else{rec={...v,...o};delete rec.id;if(v.status!==o.status)rec.history=[...(v.history||[]),{d:today(),s:o.status,n:'Schimbare status'}]}
+  return save('volunteers',id,rec,(v.regNo?'Editare':'Adăugare')+' voluntar '+o.name)})}
+function volAct(id){const v=byId('volunteers',id);form('Activitate / ore de voluntariat',[['t','Activitate sau eveniment','text',0,1,1],['d','Data','date'],['h','Ore','number']],{d:today(),h:2},async o=>{const r={...v};delete r.id;r.acts=[...(v.acts||[]),{t:o.t,d:o.d,h:+o.h||0}];return save('volunteers',id,r,'Activitate adăugată: '+v.name)})}
+async function volArch(id){const v=byId('volunteers',id);if(!confirm('Arhivezi voluntarul? Poate fi reactivat prin editare.'))return;const r={...v,status:'arhivat',history:[...(v.history||[]),{d:today(),s:'arhivat',n:'Arhivare'}]};delete r.id;await save('volunteers',id,r,'Arhivare voluntar '+v.name)}
+function brForm(id){const v=id?byId('branches',id):{};form(id?'Editează filială':'Filială nouă',BF(),v,o=>{o.code=o.code.toUpperCase().replace(/[^A-Z0-9]/g,'');if(!id&&D.branches.some(b=>b.id===o.code)){toast('Codul există deja.',1);return false}const k=id||o.code;return save('branches',k,o,(id?'Editare':'Înființare')+' filială '+o.name)})}
+function depForm(id){form('Editează departament',PF(),byId('departments',id),o=>save('departments',id,o,'Editare departament '+o.name))}
+function regForm(branch){form('Înregistrare document',RF(),{dir:'IN',date:today(),branch:branch||'',status:'înregistrat'},async o=>{
+ const sc=o.branch||'DNT';const no=nextNo(`${o.dir}-${sc}-${yr()}-`,D.register,'no');
+ if(byId('register',no)){toast('Număr duplicat, reîncearcă.',1);return false}
+ return save('register',no,{...o,no},'Înregistrare document '+no)})}
+// ---- EXPORT
+async function exportCsv(name,rows){const dl=await claude.use('downloads');if(!dl){toast('Exportul nu este disponibil.',1);return}
+ const keys=[...new Set(rows.flatMap(r=>Object.keys(r)))].filter(k=>!['history','acts'].includes(k));
+ const c=[keys.join(',')].concat(rows.map(r=>keys.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(','))).join('\n');
+ try{await dl.save({filename:name+'.csv',data:'\ufeff'+c})}catch(e){}}
+// ---- VIEWS
+const hrs=v=>(v.acts||[]).reduce((a,x)=>a+(+x.h||0),0);
+const st=s=>`<span class="tag t-${s}">${esc(s)}</span>`;
+let F={q:'',b:'',d:'',s:''};
+function dash(){const vs=D.volunteers.filter(v=>(!F.b||v.branch===F.b)&&(!F.d||v.dept===F.d));const c=s=>vs.filter(v=>v.status===s).length;
+ const cnt=(arr,fn)=>{const m={};arr.forEach(x=>{const k=fn(x);m[k]=(m[k]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1])};
+ const bars=(e)=>{const mx=Math.max(1,...e.map(x=>x[1]));return e.length?e.map(([k,n])=>`<div class="row"><span>${esc(k)}</span><i style="width:${n/mx*100}%"></i><b>${n}</b></div>`).join(''):'<p class="sub">Nu există date încă.</p>'};
+ const rec=D.audit.slice().sort((a,b)=>b.ts.localeCompare(a.ts)).slice(0,8);
+ return `<h2>Dashboard</h2><p class="sub">Situația organizației, calculată din registre.</p>
+ <div class="bar"><select id="fb"><option value="">Toate filialele</option>${D.branches.map(b=>`<option value="${b.id}" ${F.b===b.id?'selected':''}>${esc(b.name)}</option>`).join('')}</select><select id="fd"><option value="">Toate departamentele</option>${D.departments.map(b=>`<option value="${b.id}" ${F.d===b.id?'selected':''}>${esc(b.name)}</option>`).join('')}</select></div>
+ <div class="grid"><div class="kpi"><b>${vs.length}</b><span>voluntari înregistrați</span></div><div class="kpi"><b>${c('activ')}</b><span>activi</span></div><div class="kpi"><b>${c('candidat')}</b><span>cereri în așteptare</span></div><div class="kpi"><b>${c('inactiv')+c('suspendat')}</b><span>inactivi / suspendați</span></div><div class="kpi"><b>${D.branches.length}</b><span>filiale</span></div><div class="kpi"><b>${D.departments.length}</b><span>departamente</span></div><div class="kpi"><b>${D.register.length}</b><span>documente în registru</span></div><div class="kpi"><b>${vs.reduce((a,v)=>a+hrs(v),0)}</b><span>ore de voluntariat</span></div></div>
+ <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div class="panel"><h3>Voluntari pe filiale</h3>${bars(cnt(vs,v=>bn(v.branch)))}</div><div class="panel"><h3>Voluntari pe departamente</h3>${bars(cnt(vs,v=>dn(v.dept)))}</div><div class="panel"><h3>Voluntari pe status</h3>${bars(cnt(vs,v=>v.status))}</div></div>
+ <div class="panel"><h3>Activitate recentă</h3>${rec.length?rec.map(a=>`<div>${esc(a.act)} <span class="sub">– ${esc(a.by)}, ${new Date(a.ts).toLocaleString('ro-RO')}</span></div>`).join(''):'<p class="sub">Nicio acțiune încă.</p>'}</div>`}
+function vtable(vs){return `<div class="wrap"><table><tr><th>ID</th><th>Nume</th><th>Filiala</th><th>Departament</th><th>Funcția</th><th>Status</th><th>Ore</th></tr>${vs.map(v=>`<tr class="cl" onclick="location.hash='#/vol/${v.id}'"><td>${esc(v.regNo)}</td><td><b>${esc(v.name)}</b></td><td>${esc(bn(v.branch))}</td><td>${esc(dn(v.dept))}</td><td>${esc(v.role)}</td><td>${st(v.status)}</td><td>${hrs(v)}</td></tr>`).join('')||'<tr><td colspan="7" class="sub">Niciun voluntar. Adaugă primul voluntar.</td></tr>'}</table></div>`}
+function vols(){const q=F.q.toLowerCase();const vs=D.volunteers.filter(v=>(!q||(v.name+' '+v.regNo).toLowerCase().includes(q))&&(!F.b||v.branch===F.b)&&(!F.d||v.dept===F.d)&&(F.s?v.status===F.s:v.status!=='arhivat')).sort((a,b)=>a.name.localeCompare(b.name));
+ return `<h2>Registrul voluntarilor</h2><p class="sub">${vs.length} rezultate</p><div class="bar"><input id="fq" placeholder="Caută după nume sau ID" value="${esc(F.q)}"><select id="fb"><option value="">Toate filialele</option>${D.branches.map(b=>`<option value="${b.id}" ${F.b===b.id?'selected':''}>${esc(b.name)}</option>`).join('')}</select><select id="fd"><option value="">Toate departamentele</option>${D.departments.map(b=>`<option value="${b.id}" ${F.d===b.id?'selected':''}>${esc(b.name)}</option>`).join('')}</select><select id="fs"><option value="">Fără arhivați</option>${STAT.map(s=>`<option ${F.s===s?'selected':''}>${s}</option>`).join('')}</select><button class="btn" onclick="volForm()">Voluntar nou</button><button class="btn g" onclick="exportCsv('voluntari',D.volunteers)">Exportă CSV</button></div>${vtable(vs)}`}
+function volProfile(id){const v=byId('volunteers',id);if(!v)return '<p>Voluntar negăsit.</p>';
+ const k=(l,x)=>`<div><span>${l}</span>${esc(x)||'—'}</div>`;const y=x=>x?'Da':'Nu';
+ return `<p><a href="#/vol" style="color:var(--cyan)">← Registrul voluntarilor</a></p><h2>${esc(v.name)} ${st(v.status)}</h2><p class="sub">${esc(v.regNo)} · ${esc(v.role)}</p>
+ <div class="bar"><button class="btn" onclick="volForm('${id}')">Editează</button><button class="btn g" onclick="volAct('${id}')">Adaugă activitate / ore</button><button class="btn d" onclick="volArch('${id}')">Arhivează</button></div>
+ <div class="panel"><h3>Date personale și de contact</h3><div class="det">${k('E-mail',v.email)}${k('Telefon',v.phone)}${k('Județ',v.county)}${k('Localitate',v.city)}${k('Data nașterii',v.birth)}${k('Voluntar minor',y(v.minor))}</div></div>
+ <div class="panel"><h3>Apartenență în organizație</h3><div class="det">${k('Filiala',bn(v.branch))}${k('Departament',dn(v.dept))}${k('Funcția',v.role)}${k('Coordonator direct',v.coord)}${k('Data înscrierii',v.joined)}${k('Data acceptării',v.accepted)}</div></div>
+ <div class="panel"><h3>Documente și acorduri</h3><div class="det">${k('Contract de voluntariat',v.contractNo)}${k('Consimțământ GDPR',y(v.gdpr))}${k('Acord parental',v.minor?y(v.parental):'Nu este cazul')}${k('Declarații suplimentare',y(v.decl))}</div></div>
+ <div class="panel"><h3>Istoric status și funcții</h3>${(v.history||[]).slice().reverse().map(h=>`<div>${esc(h.d)} – ${st(h.s)} ${esc(h.n)}</div>`).join('')}</div>
+ <div class="panel"><h3>Activități (${hrs(v)} ore)</h3>${(v.acts||[]).slice().reverse().map(a=>`<div>${esc(a.d)} – ${esc(a.t)} <span class="sub">(${a.h} h)</span></div>`).join('')||'<p class="sub">Nicio activitate înregistrată.</p>'}</div>
+ ${v.notes?`<div class="panel"><h3>Observații</h3><div class="pre">${esc(v.notes)}</div></div>`:''}`}
+function branches(){return `<h2>Filiale</h2><p class="sub">${D.branches.length} filiale înființate</p><div class="bar"><button class="btn" onclick="brForm()">Filială nouă</button></div>
+ <div class="grid">${D.branches.map(b=>{const n=D.volunteers.filter(v=>v.branch===b.id&&v.status!=='arhivat').length;return `<a class="kpi" href="#/br/${b.id}" style="background:var(--navy)"><b>${n}</b><span>voluntari</span><h3 style="margin:12px 0 2px">${esc(b.name)}</h3><span>${esc(b.county)} · ${esc(b.city)}</span></a>`}).join('')||'<p class="sub">Nicio filială. Înființează prima filială.</p>'}</div>`}
+function regTable(rs){return `<div class="wrap"><table><tr><th>Nr. înregistrare</th><th>Data</th><th>Tip</th><th>Emitent → Destinatar</th><th>Subiect</th><th>Responsabil</th><th>Status</th><th></th></tr>${rs.map(r=>`<tr><td><b>${esc(r.no)}</b></td><td>${esc(r.date)}</td><td>${esc(r.type)}</td><td>${esc(r.from)} → ${esc(r.to)}</td><td>${esc(r.subject)}</td><td>${esc(r.resp)} <span class="sub">${esc(dn(r.dept))}</span></td><td>${st(r.status)}</td><td><button class="btn g s" onclick="del('register','${r.no}','Ștergere document ${r.no}')">Șterge</button></td></tr>`).join('')||'<tr><td colspan="8" class="sub">Niciun document înregistrat.</td></tr>'}</table></div>`}
+function brPage(id){const b=byId('branches',id);if(!b)return '<p>Filială negăsită.</p>';const k=(l,x)=>`<div><span>${l}</span>${esc(x)||'—'}</div>`;
+ const vs=D.volunteers.filter(v=>v.branch===id&&v.status!=='arhivat');const rs=D.register.filter(r=>r.branch===id).sort((a,b)=>b.no.localeCompare(a.no));
+ return `<p><a href="#/br" style="color:var(--cyan)">← Filiale</a></p><h2>${esc(b.name)}</h2><p class="sub">${esc(b.county)} · ${esc(b.city)} · înființată ${esc(b.founded)||'—'}</p>
+ <div class="bar"><button class="btn" onclick="brForm('${id}')">Editează filiala</button><button class="btn g" onclick="regForm('${id}')">Înregistrează document</button><button class="btn d" onclick="del('branches','${id}','Ștergere filială ${esc(b.name)}')">Șterge filiala</button></div>
+ <div class="grid"><div class="kpi"><b>${vs.length}</b><span>voluntari</span></div><div class="kpi"><b>${vs.filter(v=>v.status==='activ').length}</b><span>activi</span></div><div class="kpi"><b>${vs.filter(v=>v.status==='candidat').length}</b><span>candidați</span></div><div class="kpi"><b>${rs.length}</b><span>documente în registru</span></div></div>
+ <div class="panel"><h3>Conducerea filialei</h3><div class="det">${k('Președinte',b.president)}${k('Vicepreședinți',b.vice)}${k('Secretar',b.secretary)}${k('Coordonatori departamente',b.coords)}</div></div>
+ <div class="panel"><h3>Registrul filialei (intrare / ieșire)</h3>${regTable(rs)}</div>
+ <div class="panel"><h3>Voluntarii filialei</h3>${vtable(vs)}</div>`}
+function reg(){const rs=D.register.filter(r=>(!F.b||r.branch===F.b)).sort((a,b)=>b.date.localeCompare(a.date)||b.no.localeCompare(a.no));
+ return `<h2>Registrul de intrare / ieșire</h2><p class="sub">Numerotare automată, fără duplicate (ex. IN-DNT-${yr()}-0001).</p><div class="bar"><select id="fb"><option value="">Toate (național + filiale)</option>${D.branches.map(b=>`<option value="${b.id}" ${F.b===b.id?'selected':''}>${esc(b.name)}</option>`).join('')}</select><button class="btn" onclick="regForm()">Înregistrează document</button><button class="btn g" onclick="exportCsv('registru',D.register)">Exportă CSV</button></div>${regTable(rs)}`}
+function deps(){return `<h2>Departamente naționale</h2><p class="sub">Responsabilități, reguli și indicatori pentru fiecare departament.</p><div class="grid">${D.departments.map(d=>`<a class="kpi" href="#/dep/${d.id}" style="background:var(--navy);min-height:130px"><h3 style="margin:0 0 6px">${esc(d.name)}</h3><span>${esc(d.head)||'Coordonator vacant'}</span></a>`).join('')||'<p class="sub">Departamentele nu au fost încă încărcate.</p>'}</div>`}
+function depPage(id){const d=byId('departments',id);if(!d)return '<p>Departament negăsit.</p>';const sec=(t,x)=>`<div class="panel"><h3>${t}</h3><div class="pre">${esc(x)||'—'}</div></div>`;
+ const vs=D.volunteers.filter(v=>v.dept===id&&v.status!=='arhivat');
+ return `<p><a href="#/dep" style="color:var(--cyan)">← Departamente</a></p><h2>${esc(d.name)}</h2><p class="sub">Coordonator: ${esc(d.head)||'vacant'}</p><div class="bar"><button class="btn" onclick="depForm('${id}')">Editează</button></div>
+ ${sec('Descriere',d.desc)}${sec('Obiective',d.goals)}${sec('Responsabilități',d.resp)}${sec('Reguli de funcționare',d.rules)}${sec('Indicatori de performanță',d.kpi)}${sec('Membri (note)',d.members)}
+ <div class="panel"><h3>Voluntari alocați (${vs.length})</h3>${vtable(vs)}</div>
+ <div class="panel"><h3>Documente responsabile</h3>${regTable(D.register.filter(r=>r.dept===id))}</div>`}
+function audit(){const a=D.audit.slice().sort((a,b)=>b.ts.localeCompare(a.ts)).slice(0,300);return `<h2>Audit log</h2><p class="sub">Toate modificările importante, cu autor și dată.</p><div class="wrap"><table><tr><th>Data</th><th>Autor</th><th>Acțiune</th></tr>${a.map(x=>`<tr><td>${new Date(x.ts).toLocaleString('ro-RO')}</td><td>${esc(x.by)}</td><td>${esc(x.act)}</td></tr>`).join('')||'<tr><td colspan="3" class="sub">Nicio acțiune.</td></tr>'}</table></div>`}
+const NAV=[['dash','Dashboard'],['vol','Voluntari'],['br','Filiale'],['reg','Registru intrare/ieșire'],['dep','Departamente'],['audit','Audit log']];
+function render(){if(!ready)return;const h=(location.hash||'#/dash').split('/');const s=h[1]||'dash',id=decodeURIComponent(h[2]||'');
+ const fn={dash,vol:()=>id?volProfile(id):vols(),br:()=>id?brPage(id):branches(),reg,dep:()=>id?depPage(id):deps(),audit}[s]||dash;
+ const keep=document.activeElement?.id,pos=keep==='fq'?document.activeElement.selectionStart:0;
+ $('#root').innerHTML=`<div class="app"><aside><h1>DNT CENTRAL</h1><small>Evidență internă · Board</small>${NAV.map(([k,l])=>`<a href="#/${k}" class="${k===s?'on':''}">${l}</a>`).join('')}</aside><main>${fn()}</main></div>`;
+ [['fq','q'],['fb','b'],['fd','d'],['fs','s']].forEach(([i,k])=>{const e=$('#'+i);if(e)e.oninput=()=>{F[k]=e.value;render()}});
+ if(keep==='fq'){const e=$('#fq');e.focus();e.setSelectionRange(pos,pos)}}
+addEventListener('hashchange',()=>{render();scrollTo(0,0);document.querySelector('main')?.scrollTo(0,0)});
+// ---- START
+(async()=>{
+ const gate=(t,m)=>$('#root').innerHTML=`<div class="gate"><h2>${t}</h2><p class="sub">${m}</p></div>`;
+ user=await claude.use('user');db=await claude.use('db');
+ if(!user||!db){gate('Acces restricționat','Autentifică-te cu contul claude.ai primit de la Biroul Executiv pentru a deschide evidența.');return}
+ if(!(await user.canEdit())){gate('Acces restricționat','Această evidență este deschisă doar membrilor Board-ului. Cere proprietarului să te invite ca editor.');return}
+ try{const m=await user.me();me={id:m.id,name:m.name||'Membru Board'}}catch(e){}
+ COLS.forEach(c=>db.collection(c).onSnapshot(s=>{D[c]=s.docs.map(d=>({id:d.id,...d.data()}));ready=1;render()},e=>{gate('Eroare de acces',esc(e.message||e.code))}));
+ setTimeout(()=>{if(!ready){ready=1;render()}},2500);
+})();
+</script>
+</body>
+</html>
